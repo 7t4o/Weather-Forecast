@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background: linear-gradient(90deg, dodgerblue, rgb(150, 173, 194));
+    background: linear-gradient(90deg, dodgerblue, #96ADC2);
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
 
 .title h1 {
     font-size: 50px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .title p {
@@ -49,7 +49,7 @@ main .day {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(0deg, dodgerblue, rgb(150, 173, 194)) ;
+    background: linear-gradient(0deg, dodgerblue, #96ADC2) ;
     border: 1px solid #888;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
@@ -62,7 +62,7 @@ main .day {
 .day .weekDay {
     position: absolute;
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 500;
     top: 30px;
 }
 
@@ -76,7 +76,7 @@ main .day {
     position: absolute;
     top: 300px;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .day .temp {
@@ -93,25 +93,6 @@ main .day {
     text-align: center;
     font-size: 14px;
 }
-
-
-@media (max-width: 717px) {
-    .title {font-size: 35px;}
-    main {justify-content: center;}
-}
-
-@media (max-width: 508px) {
-    .title h1 {font-size: 35px;}
-    main {justify-content: center;}
-    main .day {margin-bottom: 20px;}
-    .container {width: 100%}
-
-}
-
-.example::-webkit-scrollbar {
-    display: none;
-}
-
 
 .lds-facebook,
 .lds-facebook div {
@@ -153,4 +134,16 @@ main .day {
         top: 24px;
         height: 32px;
     }
+}
+
+
+@media (max-width: 717px) {
+    .title {font-size: 35px;}
+    main {justify-content: center;}
+}
+
+@media (max-width: 508px) {
+    .title h1 {font-size: 35px;}
+    main {justify-content: center;}
+    .container {width: 100%}
 }
