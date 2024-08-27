@@ -140,6 +140,7 @@ main .day {
 @media (max-width: 717px) {
     .title {font-size: 35px;}
     main {justify-content: center;}
+    .lds-facebook {margin-left: 0;}
 }
 
 @media (max-width: 508px) {
