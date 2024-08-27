@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Andale Mono, monospace;
+    color: #eee;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(90deg, dodgerblue, rgb(150, 173, 194));
+}
+
+.container {
+    display: flex;
+    width: calc(100% - 200px);
+    margin-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title {
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.title p {
+    font-size: 25px;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .day {
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(0deg, dodgerblue, rgb(150, 173, 194)) ;
+    border: 1px solid #888;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px 15px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.day .weekDay {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 100;
+    top: 30px;
+}
+
+.day img {
+    width: 150px;
+    position: absolute;
+    top: 100px;
+}
+
+.day .weatherDes {
+    position: absolute;
+    top: 300px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.day .temp {
+    position: absolute;
+    font-size: 25px;
+    font-weight: 100;
+    top: 350px;
+}
+
+.day p {
+    position: absolute;
+    bottom: 45px;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+@media (max-width: 717px) {
+    .title {font-size: 35px;}
+    main {justify-content: center;}
+}
+
+@media (max-width: 508px) {
+    .title h1 {font-size: 35px;}
+    main {justify-content: center;}
+    main .day {margin-bottom: 20px;}
+    .container {width: 100%}
+
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+
+.lds-facebook,
+.lds-facebook div {
+    box-sizing: border-box;
+}
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: calc(50% - 40px);
+}
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: currentColor;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0s;
+}
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+}
