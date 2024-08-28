@@ -21,6 +21,7 @@ async function get(lat, lon) { // جلب البيانات
         const data = await response.json();
 
         loadingSpinner.style.display = 'none';
+        let cityName = await getCityName(lat, lon); // نستخدم await لان الدالة ترجع Promise
         for(let i=0; i<5; i++){
             let weather = getWeatherTranslate(data.list[i*8].weather[0].main); // الوصول الى حالة الطقس في كل الايام
             let weatherDetails = data.list[i*8].weather[0].description
@@ -28,7 +29,6 @@ async function get(lat, lon) { // جلب البيانات
             let day = getDayOfWeek(date.match(/^\S+/)[0])
             let temp = data.list[i*8].main.temp
             let icon = data.list[i*8].weather[0].icon
-            let cityName = data.city.name
 
             statusDay(day, weather, temp.toFixed(1), icon.slice(0,2), weatherDetails, cityName)
         }
@@ -58,6 +58,23 @@ function getWeatherTranslate(weather) { // ترجمة الكلمات الانج�
     };
 
     return translate[weather] ? translate[weather] : weather;
+}
+
+async function getCityName(latitude, longitude) { // جلب اسم المدينة من خلال الاحداثيات
+    const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+      // استخراج اسم المدينة من البيانات المُرجعة
+        const city = data.address.city || data.address.town || data.address.village || 'غير معروف';
+        
+        return city;
+    } catch (error) {
+        console.error('حدث خطأ أثناء جلب اسم المدينة:', error);
+        return 'غير معروف';
+    }
 }
 
 function statusDay(day, weather, temp, icon, weatherDetails, cityName){ // أنشاء البطايق
