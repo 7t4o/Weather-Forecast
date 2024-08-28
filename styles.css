@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Andale Mono, monospace;
     color: #eee;
+    outline: none;
 }
 
 body {
@@ -34,6 +35,32 @@ body {
 
 .title p {
     font-size: 25px;
+}
+
+.preItems {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preItems button {
+    height: 30px;
+    width: 150px;
+    background: linear-gradient(180deg, dodgerblue, #96ADC2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.preItems button:active {
+    border: none;
+    transform: scale(0.95);
 }
 
 main {
@@ -103,7 +130,6 @@ main .day {
     position: relative;
     width: 80px;
     height: 80px;
-    margin-left: calc(50% - 40px);
 }
 .lds-facebook div {
     display: inline-block;

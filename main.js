@@ -14,7 +14,7 @@ function getSimpleLocation() { //طلب الوصول الى الموقع
 }
 
 async function get(lat, lon) { // جلب البيانات
-    const loadingSpinner = document.getElementsByClassName('lds-facebook')[0];
+    const loadingSpinner = document.getElementsByClassName('preItems')[0];
 
     try{
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ar&appid=ade96dcdc1c817fafa0dc00d90c518db&units=metric`);
@@ -90,4 +90,8 @@ function statusDay(day, weather, temp, icon, weatherDetails, cityName){ // أن�
             </div>`
     p.innerHTML = `(${cityName})`
 }
+
 getSimpleLocation()
+
+let btn = document.querySelector(".preItems button");
+btn.addEventListener('click', getSimpleLocation);
